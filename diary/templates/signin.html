@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="container col-lg-5 background">
+    <div class="align-items-center container-fluid">
+        <h2 class="text-center text-white">Login</h2>
+        <form>
+            <input class="form-control my-2" type="email" required placeholder="Enter Your Email" >
+            <input class="form-control my-2" type="password" required placeholder="Enter Your Password" >
+            <button class="button form-control my-2">Login</button>
+            <div>
+                <div>
+                    <a class="links my-2" href="{% url 'index' %}">Dont have an account? click here</a>
+                </div>
+                <div>
+                    <a class="links my-2" href="{% url 'forget_pass' %}">Forgot password?</a>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,165 @@
+.background{
+    background-color: #0cbaba;
+    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+    padding: 50px 20px;
+    position: relative;
+    top: 280px;
+    border-radius: 20px;
+}
+.background_dash{
+    background-color: #0cbaba;
+    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+    height: 95vh;
+    position: relative;
+    top: 20px;
+    border-radius: 20px;
+}
+.background_dash_container{
+    background-color: rgba(255, 255, 255, 0.151);
+    height: 88vh;
+    position: relative;
+    top: 20px;
+    border-radius: 20px;
+    overflow-y: scroll;
+    
+}
+
+.background_dash_container::-webkit-scrollbar{
+    display: none;
+}
+
+
+/* animation */
+
+.box div{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 6px solid rgba(255, 255, 255, 0.8);
+}
+
+.box div:nth-child(1){
+    top: 12%;
+    left: 42%;
+    animation: animate 10s linear infinite;
+}
+.box div:nth-child(2){
+    top: 70%;
+    left: 50%;
+    animation: animate 7s linear infinite;
+}
+.box div:nth-child(3){
+    top: 17%;
+    left: 6%;
+    animation: animate 9s linear infinite;
+}
+.box div:nth-child(4){
+    top: 20%;
+    left: 60%;
+    animation: animate 10s linear infinite;
+}
+.box div:nth-child(5){
+    top: 57%;
+    left: 10%;
+    animation: animate 6s linear infinite;
+}
+.box div:nth-child(6){
+    top: 80%;
+    left: 70%;
+    animation: animate 12s linear infinite;
+}
+.box div:nth-child(7){
+    top: 60%;
+    left: 80%;
+    animation: animate 15s linear infinite;
+}
+.box div:nth-child(8){
+    top: 32%;
+    left: 25%;
+    animation: animate 16s linear infinite;
+}
+.box div:nth-child(9){
+    top: 90%;
+    left: 25%;
+    animation: animate 9s linear infinite;
+}
+.box div:nth-child(10){
+    top: 20%;
+    left: 80%;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.3) translateY(-90px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ----------- */
+.button{
+    background-color: #7ee7fa69;
+    background-image: linear-gradient(315deg, #7ee7fa66 0%, #80ff72a9 74%);
+    color: white;
+    border-style: none;
+}
+
+.button:hover{
+    transition: all ease-in-out 400ms;
+    background-color: #43defa;
+    background-image: linear-gradient(315deg, #49e2fd 0%, #4ffc3c 74%);
+    
+}
+
+body{
+    background-color: #7ee7fa69;
+    background-image: linear-gradient(315deg, #7ee7fa66 0%, #80ff72a9 74%);
+
+}
+
+.links{
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+}
+
+.links:hover{
+    transition: all ease-in-out 400ms;
+    color: grey;
+}
+
+.background_dash_container a{
+    text-decoration: none;
+}
+.background_dash_container p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.background_dash_container .dash_data{
+    color: white;background-color: rgba(255, 255, 255, 0.222);
+    padding: 10px; border-radius: 10px;
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+}
+
+.icons:hover{
+    transform: rotate(360deg);
+    transition: all ease-in-out 400ms;
+}
+
+.textarea{
+    resize: none;
+    border-radius: 15px;
+}
+
+.textarea::-webkit-scrollbar{
+    display: none;
+}

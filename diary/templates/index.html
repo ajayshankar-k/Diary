@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="container col-lg-5 background">
+    <div class="align-items-center container-fluid">
+        <h2 class="text-center text-white">Register</h2>
+        <form>
+            <input class="form-control" type="email" required placeholder="Enter Your Email" >
+            <button class="button form-control my-2">Signup</button>
+            <a class="links my-2" href="{% url 'signin' %}">Already have an account? click here</a>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

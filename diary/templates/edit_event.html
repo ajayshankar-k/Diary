@@ -1,0 +1,24 @@
+{% extends 'dashboard_layout.html' %}
+{% block content %}
+
+
+<div class="container col-lg-5 background_dash">
+    <div style="position: relative;top: 10px;">
+        <a href="{% url 'dashboard' %}" title="Back" style="text-decoration: none;color: white;font-size: 20px;margin-right: 20px;">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+    </div>
+    <div class="container-fluid background_dash_container">
+        <form>
+            <input style="border-radius: 10px;" type="text" placeholder="Title..."  class="form-control my-2"> 
+            <input style="border-radius: 10px;" type="date" id="" class="form-control">
+            <textarea name="" id="" class="form-control my-2 textarea" placeholder="Type your day here..." cols="30" rows="30"></textarea>
+            <button class="button form-control">Save</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
