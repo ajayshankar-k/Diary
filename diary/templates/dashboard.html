@@ -7,29 +7,40 @@
         <a href="{% url 'add_event' %}" title="Add event" style="text-decoration: none;color: white;font-size: 20px;margin-right: 20px;">
             <i class="fa-solid fa-plus icons"></i>
         </a>
-        <a href="" title="Logout" style="text-decoration: none;color: white;font-size: 20px;">
+        <a href="{% url 'change_pass' %}" title="Change password" style="text-decoration: none;color: white;font-size: 20px;margin-right: 20px;">
+            <i class="fa-solid fa-key icons"></i>
+        </a>
+        <a href="{% url 'signout' %}" title="Logout" style="text-decoration: none;color: white;font-size: 20px;">
             <i class="fa-solid fa-power-off icons"></i>
         </a>
     </div>
     <div class="container-fluid background_dash_container">
-        <!-- data start -->
-        <div class="dash_data">
-            <div class="row justify-content-between">
-                <a class="col" href="{% url 'edit_event' %}" title="Edit" style="color: white;">
-                    <i class="fa-solid fa-pencil"></i>
-                </a>
-                <a class="col text-end" href="" title="Delete" style="color: white;">
-                    <i class="fa-solid fa-trash"></i>
+        {% if events %}
+            {% for events in events %}
+            <!-- data start -->
+            <div class="dash_data">
+                <div class="row justify-content-between">
+                    <a class="col" href="{% url 'edit_event' events.id %}" title="Edit" style="color: white;">
+                        <i class="fa-solid fa-pencil"></i>
+                    </a>
+                    <a class="col text-end" href="{% url 'delete_event' events.id %}" title="Delete" style="color: white;">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </div>
+                <a href="{% url 'view_event' events.id %}">
+                    <div class="dash_data">
+                        <h5 style="display: inline;">{{events.date}}</h5>
+                        <h3>{{events.title}}</h3>
+                        <p>{{events.context}}</p>
+                    </div>
                 </a>
             </div>
-            <a href="{% url 'view_event' %}">
-                <div class="dash_data">
-                    <h5 style="display: inline;">10/22/2001</h5>
-                    <h3>Title</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores suscipit magni consectetur labore aspernatur aliquid tenetur iusto at exercitationem architecto ipsa tempore officiis minima earum, numquam cupiditate? Vel, eum placeat.</p>
-                </div>
-            </a>
-        </div>
+            {% endfor %}
+        {% else %}
+            <div class="dash_data text-center">
+                No Entries
+            </div>
+        {% endif %}
         <!-- data end-->
     </div>
 </div>

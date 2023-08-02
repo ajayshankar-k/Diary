@@ -1,0 +1,37 @@
+{% extends 'dashboard_layout.html' %}
+{% block content %}
+
+
+<div class="container col-lg-5 background_dash">
+    <div style="position: relative;top: 10px;">
+        <a href="{% url 'dashboard' %}" title="Back" style="text-decoration: none;color: white;font-size: 20px;margin-right: 20px;">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+    </div>
+    <div class="container-fluid background_dash_container">
+            <div class="dash_data">
+               <form method="POST">
+                {% csrf_token %}
+                <h2>Change password</h2>
+                {% for messages in messages %}
+                    {% if 'success' in messages.tags %}
+                        <div class="alert alert-success text-center">{{messages}}</div>
+                    {% elif 'error' in messages.tags %}
+                        <div class="alert alert-danger text-center">{{messages}}</div>
+                    {% endif %}
+                {% endfor %}
+                <input class="form-control my-2" disabled type="email" value="Email : {{logged}}">
+                <input class="form-control my-2" type="password" name="oldpass" placeholder="Old password" >
+                <input class="form-control my-2" type="password" name="newpass" placeholder="New password" >
+                <button class="button form-control my-2">Save</button>
+               </form>
+            </div>
+            
+        <!-- data end-->
+    </div>
+</div>
+
+
+
+
+{% endblock %}

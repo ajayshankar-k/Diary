@@ -4,9 +4,17 @@
 <div class="container col-lg-5 background">
     <div class="align-items-center container-fluid">
         <h2 class="text-center text-white">Login</h2>
-        <form>
-            <input class="form-control my-2" type="email" required placeholder="Enter Your Email" >
-            <input class="form-control my-2" type="password" required placeholder="Enter Your Password" >
+        {% for messages in messages %}
+            {% if 'success' in messages.tags %}
+                <div class="alert alert-success text-center">{{messages}}</div>
+            {% elif 'error' in messages.tags %}
+                <div class="alert alert-danger text-center">{{messages}}</div>
+            {% endif %}
+        {% endfor %}
+        <form method="POST">
+            {% csrf_token %}
+            <input name="email" class="form-control my-2" type="email" required placeholder="Enter Your Email" >
+            <input name="password" class="form-control my-2" type="password" required placeholder="Enter Your Password" >
             <button class="button form-control my-2">Login</button>
             <div>
                 <div>

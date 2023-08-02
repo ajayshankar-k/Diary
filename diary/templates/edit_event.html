@@ -9,10 +9,11 @@
         </a>
     </div>
     <div class="container-fluid background_dash_container">
-        <form>
-            <input style="border-radius: 10px;" type="text" placeholder="Title..."  class="form-control my-2"> 
-            <input style="border-radius: 10px;" type="date" id="" class="form-control">
-            <textarea name="" id="" class="form-control my-2 textarea" placeholder="Type your day here..." cols="30" rows="30"></textarea>
+        <form method="POST">
+            {% csrf_token %}
+            <input required name="title" style="border-radius: 10px;" type="text" value="{{data.title}}" class="form-control my-2"> 
+            <input required name="date" style="border-radius: 10px;" type="date" value="{{formatted_date}}" id="" class="form-control">
+            <textarea required name="context" id="" class="form-control my-2 textarea" placeholder="Type your day here..." cols="30" rows="30">{{data.context}}</textarea>
             <button class="button form-control">Save</button>
         </form>
     </div>

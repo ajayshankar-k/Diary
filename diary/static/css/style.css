@@ -163,3 +163,7 @@ body{
 .textarea::-webkit-scrollbar{
     display: none;
 }
+
+.view{
+    background-color: #380036;
+}
